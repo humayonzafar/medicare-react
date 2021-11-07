@@ -1,12 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import CertificateForm from "./components/CertificateForm";
 import Certificate from './components/Certificate'
-import {useCertificateFormHook} from "./hooks/certificateFormHook";
 
 function App() {
-    const {isVaccineCardDataSet} = useCertificateFormHook();
-    return (isVaccineCardDataSet ? <Certificate/> : <CertificateForm/>);
+    const [vaccineDataExists, setVaccineDataExists] = useState(!!localStorage.getItem('vaccineCardData'));
+    return (vaccineDataExists ? <Certificate/> : <CertificateForm setVaccineDataExists={setVaccineDataExists}/>);
 }
 
 export default App;

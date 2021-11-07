@@ -1,9 +1,9 @@
 import React from 'react';
 import {VACCINES} from '../constants/constants';
-import {useCertificateFormHook} from "../hooks/certificateFormHook";
+import {useCertificateForm} from "../hooks/useCertificateForm";
 
-const CertificateForm = () => {
-    const {formData, onSubmit, onChange} = useCertificateFormHook();
+const CertificateForm = ({setVaccineDataExists}) => {
+    const {formData, onSubmit, onChange} = useCertificateForm(setVaccineDataExists);
     const {
         name,
         dobDay,

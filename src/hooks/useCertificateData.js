@@ -13,7 +13,7 @@ const initialState = {
     ihi: DUMMY_CERTIFICATE_VALUES.IHI,
 };
 
-export const useCertificateDataHook = () => {
+export const useCertificateData = () => {
 
     const [certificateData, setCertificateData] = useState(initialState);
     const [timer, setTimer] = useState(null);
@@ -36,7 +36,6 @@ export const useCertificateDataHook = () => {
             startTime();
         }
     }, []);
-
 
     function checkTime(i) {
         if (i < 10) {

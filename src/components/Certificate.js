@@ -1,10 +1,10 @@
 import React from 'react';
 import tick from '../assets/images/tick.gif'
 import Header from "./Header";
-import {useCertificateDataHook} from "../hooks/certificateDataHook";
+import {useCertificateData} from "../hooks/useCertificateData";
 
 const Certificate = () => {
-    const {certificateData,timer} = useCertificateDataHook();
+    const {certificateData,timer} = useCertificateData();
     return (
         <div>
             <Header/>,

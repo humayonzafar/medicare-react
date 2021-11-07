@@ -17,19 +17,17 @@ const initialState = {
     ihi: DUMMY_CERTIFICATE_VALUES.IHI,
 };
 
-export const useCertificateFormHook = () => {
+export const useCertificateForm = (setVaccineDataExists) => {
 
     const [formData, setFormData] = useState(initialState);
-    const [isVaccineCardDataSet, setIsVaccineCardData] = useState(!!localStorage.getItem('vaccineCardData'));
 
     const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
 
     const onSubmit = e => {
         e.preventDefault();
         localStorage.setItem('vaccineCardData', JSON.stringify(formData));
-        setIsVaccineCardData(true);
-        window.location.reload();
+        setVaccineDataExists(true);
     }
 
-    return {formData, setFormData, onSubmit, onChange, isVaccineCardDataSet};
+    return {formData, setFormData, onSubmit, onChange};
 }
