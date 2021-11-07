@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+*, *::after, *::before {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: sfpro;
+    src: url('./assets/fonts/sf-pro.ttf');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    margin: 0 0;
+    line-height: 1.4;
+    font-family: Arial, 'sans-serif';
+    max-width: 600px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main {
+    margin: 16px;
+    margin-top: 64px
 }
 
-.App-link {
-  color: #61dafb;
+.headbar {
+    background: #008542;
+    color: #fff;
+    font-family: sfpro, 'sans-serif';
+    font-size: 18px;
+    padding: 10px;
+    padding-left: 20px;
+    z-index: 1000;
+    left: 0;
+    background-image: url("./assets/images/share.png");
+    background-repeat: no-repeat;
+    background-position: 88% center;
+    background-size: 25px;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headbar div {
+}
+
+body {
+    margin: auto;
+}
+
+.savebutton {
+    border-radius: 4px;
+    border: solid 1.25px #008542;
+    text-align: center;
+    padding: 8px;
+}
+
+.box {
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px 1px #ccc;
+}
+
+.tophalf {
+    background: #0c874a;
+    color: #fff;
+    height: 200px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-image: url("./assets/images/aus.png");
+    background-size: 38% auto;
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+    position: relative;
+    background-position: center 12%;
+}
+
+.bottomhalf {
+    padding: 10px;
+    padding-bottom: 4px;
+    background-image: url("./assets/images/watermark.gif");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.bottomhalf {
+    filter: brightness(1.05);
+}
+
+.bottom-field {
+    margin-bottom: 12px;
+}
+
+.bottom-descriptor {
+    color: #aaa;
+    font-size: 13.4px;
+}
+
+.bottom-value {
+    font-size: 18px;
+}
+
+.auslogo {
+    margin: 2% 30%;
+    width: 40%;
+}
+
+.tick {
+    float: right;
+    height: 45%;
+    bottom: 7%;
+    position: absolute;
+    right: 0;
+}
+
+.descriptor {
+    font-size: 15px;
+}
+
+.cov-dig-large {
+    font-size: 20px;
+}
+
+.info {
+    font-size: 28px;
+}
+
+.clock {
+    font-family: monospace;
+    color: #898989;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 24px;
+}
+
+.applewallet {
+    width: 55%;
+    margin: 12px auto;
+    display: block;
+}
+
+.bottom-details {
+    margin-bottom: 14px;
+}
+
+.cov-dig {
+    margin-left: 16px;
+    margin-top: auto;
+    bottom: 10%;
+    position: absolute;
+}
+
+.cov-dig-large {
+    font-size: 27px;
+}
+
+.cov-dig-small {
+    font-size: 17px;
+}
+
+.validfrom {
+    color: #008542;
+}
+
+.shareicon {
+    height: 22px;
+    float: right;
+    margin-right: 4px;
+}
+
+.req-text {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: block
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    font-size: 20px;
+    height: auto;
+    border: 1px solid #888;
+    width: 82%;
+}
+
+.modal-content input, select {
+    display: inline-block;
+    height: 40px;
+    width: calc(100% - 8px);
+    margin-bottom: 4px;
+}
+
+.modal-content .date-field {
+    width: 29%;
+}
+
+.m-top-0 {
+    margin-top: 0;
+}
+
+.date-field + .date-field {
+    margin-left: 0.4rem;
 }
