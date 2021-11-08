@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Header = () => (
-    <div className="headbar" id="header">
-        Close
-    </div>
-);
+const Header = () => {
+
+    const close = () =>{
+       window.close();
+    }
+
+    return (
+        <div className="headbar show-cursor" id="header" onClick={close}>
+            Close
+        </div>
+    )
+};
 
 export default Header;

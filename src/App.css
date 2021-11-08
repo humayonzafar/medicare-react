@@ -213,3 +213,7 @@ body {
 .date-field + .date-field {
     margin-left: 0.4rem;
 }
+
+.show-cursor:hover{
+    cursor: pointer !important;
+}
