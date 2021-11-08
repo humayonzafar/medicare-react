@@ -14,7 +14,7 @@ const Header = () => {
         <div>
             <div className="headbar" id="header">
                 <button className='close-button show-cursor' onClick={closeTab}>Close</button>
-                <img className="headbar_img" src={saveIcon}
+                <img className="headbar_img show-cursor" src={saveIcon}
                      onClick={() => toggleShowSocialMenu(!showSocialMenu)} alt='share'/>
             </div>
             <div>
