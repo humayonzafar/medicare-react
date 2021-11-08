@@ -4,22 +4,21 @@ import SocialShare from "./SocialShare";
 
 const Header = () => {
 
-    const [showSocialMenu, setShowSocialMenu] = useState(false);
+    const [showSocialMenu, toggleShowSocialMenu] = useState(false);
 
-    function closeTab() {
+    const closeTab = (e) => {
         window.close();
     }
 
     return (
         <div>
             <div className="headbar" id="header">
-                <span className='show-cursor' onClick={closeTab}>Close</span>
+                <button className='close-button show-cursor' onClick={closeTab}>Close</button>
                 <img className="headbar_img" src={saveIcon}
-                     onClick={() => setShowSocialMenu(!showSocialMenu)}
-                />
+                     onClick={() => toggleShowSocialMenu(!showSocialMenu)} alt='share'/>
             </div>
             <div>
-                {showSocialMenu && <SocialShare setShowSocialMenu={setShowSocialMenu}/>}
+                {showSocialMenu && <SocialShare setShowSocialMenu={toggleShowSocialMenu}/>}
             </div>
         </div>
     )

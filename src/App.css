@@ -50,6 +50,9 @@ body {
     border: solid 1.25px #008542;
     text-align: center;
     padding: 8px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: white;
 }
 
 .box {
@@ -229,4 +232,16 @@ body {
 
 .social_share {
     margin: 0.5rem;
+}
+
+button.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+button:hover{
+    cursor: pointer;
 }

@@ -3,7 +3,12 @@ import {VACCINES} from '../constants/constants';
 import {useCertificateForm} from "../hooks/useCertificateForm";
 
 const CertificateForm = ({setVaccineDataExists}) => {
-    const {formData, onSubmit, onChange} = useCertificateForm(setVaccineDataExists);
+    const {formData, onChange} = useCertificateForm();
+    const onSubmit = e => {
+        e.preventDefault();
+        localStorage.setItem('vaccineCardData', JSON.stringify(formData));
+        setVaccineDataExists(true);
+    }
     const {
         name,
         dobDay,
