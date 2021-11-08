@@ -62,16 +62,19 @@
     -->
   </body>
   <script type="application/javascript">
-    // if ('serviceWorker' in navigator) {
-    //   window.addEventListener('load', function () {
-    //     navigator.serviceWorker.register('serviceWorker.js', { scope: '/' }).then(function (registration) {
-    //       // Registration was successful
-    //       console.debug('ServiceWorker registration successful with scope: ', registration.scope);
-    //     }, function (err) {
-    //       // registration failed :(
-    //       console.debug('ServiceWorker registration failed: ', err);
-    //     });
-    //   });
-    // }
+    function registerServiceWorker() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./serviceWorker.js') //
+                .then(function(reg){
+                  console.log("service worker registered")
+                }).catch(function(err) {
+          console.log(err)
+        });
+      }
+      else {
+        console.log("Could not find serviceWorker in navigator")
+      }
+    }
+    registerServiceWorker()
   </script>
 </html>
