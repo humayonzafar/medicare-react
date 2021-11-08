@@ -15,8 +15,7 @@ body {
 }
 
 .main {
-    margin: 16px;
-    margin-top: 64px
+    margin: 85px 16px 16px;
 }
 
 .headbar {
@@ -221,11 +220,13 @@ body {
 }
 
 .social-share-modal {
+    z-index: 999;
     position: absolute;
     top: 49px;
     right: 10%;
     box-shadow: 0 4px 6px -1px #008542, 0 2px 4px -1px #008542;
 }
+
 .social_share {
     margin: 0.5rem;
 }
