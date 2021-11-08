@@ -64,17 +64,15 @@
   <script type="application/javascript">
     function registerServiceWorker() {
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./serviceWorker.js') //
-                .then(function(reg){
-                  console.log("service worker registered")
-                }).catch(function(err) {
+        navigator.serviceWorker.register('./serviceWorker.js').then(function (reg) {
+          console.log("service worker registered")
+        }).catch(function (err) {
           console.log(err)
         });
-      }
-      else {
+      } else {
         console.log("Could not find serviceWorker in navigator")
       }
     }
-    registerServiceWorker()
+    registerServiceWorker();
   </script>
 </html>
