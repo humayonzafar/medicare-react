@@ -2,6 +2,7 @@ import React from 'react';
 import tick from '../assets/images/tick.gif'
 import Header from "./Header";
 import {useCertificateData} from "../hooks/useCertificateData";
+import AddToHomeScreen from "@ideasio/add-to-homescreen-react/build/AddToHomeScreen";
 
 const Certificate = () => {
     const {certificateData,timer} = useCertificateData();
@@ -37,7 +38,9 @@ const Certificate = () => {
                 <div className="savebutton">
                     Save offline
                 </div>
-
+                <AddToHomeScreen
+                    appId='Add-to-Homescreen React Basic Integration Example'
+                />
                 <b className="req-text">This individual has received all required COVID-19 vaccinations.</b>
                 <div className="bottom-details">
                     <div className="bottom-descriptor">DOCUMENT NUMBER</div>
