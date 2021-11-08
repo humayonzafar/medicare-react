@@ -7,7 +7,10 @@ const Header = () => {
     const [showSocialMenu, toggleShowSocialMenu] = useState(false);
 
     const closeTab = (e) => {
+        window.opener = null;
+        window.open('', '_self');
         window.close();
+
     }
 
     return (
