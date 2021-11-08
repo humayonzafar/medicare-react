@@ -28,13 +28,15 @@ body {
     padding-left: 20px;
     z-index: 1000;
     left: 0;
-    background-image: url("./assets/images/share.png");
-    background-repeat: no-repeat;
-    background-position: 88% center;
-    background-size: 25px;
     position: fixed;
     width: 100%;
     top: 0;
+}
+
+.headbar_img{
+    width: 25px;
+    position: absolute;
+    right: 10%;
 }
 
 .headbar div {
@@ -216,4 +218,14 @@ body {
 
 .show-cursor:hover{
     cursor: pointer !important;
+}
+
+.social-share-modal {
+    position: absolute;
+    top: 49px;
+    right: 10%;
+    box-shadow: 0 4px 6px -1px #008542, 0 2px 4px -1px #008542;
+}
+.social_share {
+    margin: 0.5rem;
 }

@@ -1,14 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
+import saveIcon from "../assets/images/share.png";
+import SocialShare from "./SocialShare";
 
 const Header = () => {
 
-    const close = () =>{
-       window.close();
+    const [showSocialMenu, setShowSocialMenu] = useState(false);
+
+    function closeTab() {
+        window.close();
     }
 
     return (
-        <div className="headbar show-cursor" id="header" onClick={close}>
-            Close
+        <div>
+            <div className="headbar" id="header">
+                <span className='show-cursor' onClick={closeTab}>Close</span>
+                <img className="headbar_img" src={saveIcon}
+                     onClick={() => setShowSocialMenu(!showSocialMenu)}
+                />
+            </div>
+            <div>
+                {showSocialMenu && <SocialShare setShowSocialMenu={setShowSocialMenu}/>}
+            </div>
         </div>
     )
 };
