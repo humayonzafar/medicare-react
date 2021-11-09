@@ -13,9 +13,11 @@ const Header = () => {
     return (
         <div>
             <div className="headbar" id="header">
-                <button className='close-button show-cursor' onClick={closeTab}>Close</button>
-                <img className="headbar_img show-cursor" src={saveIcon}
-                     onClick={() => toggleShowSocialMenu(!showSocialMenu)} alt='share'/>
+                <div className='header-nav'>
+                    <button className='close-button show-cursor' onClick={closeTab}>Close</button>
+                    <img className="headbar-img show-cursor" src={saveIcon}
+                         onClick={() =>  toggleShowSocialMenu(!showSocialMenu)} alt='share'/>
+                </div>
             </div>
             <div>
                 {showSocialMenu && <SocialShare setShowSocialMenu={toggleShowSocialMenu}/>}

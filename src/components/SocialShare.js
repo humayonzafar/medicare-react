@@ -21,7 +21,10 @@ const SocialShare = ({setShowSocialMenu}) => {
     let socialIconModalRef = useRef(null);
 
     const handleClickOutside = (event) => {
-        if (socialIconModalRef.current && !socialIconModalRef.current.contains(event.target)) {
+        if(event.target && event.target?.classList.contains('headbar-img')){
+            setShowSocialMenu(true);
+        }
+        else if (socialIconModalRef.current && !socialIconModalRef.current.contains(event.target)) {
             setShowSocialMenu(false);
         }
     };
