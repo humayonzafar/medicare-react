@@ -20,7 +20,7 @@ const Certificate = () => {
 
     return (
         <div>
-            <Header/>,
+            <Header/>
             <div className="main">
                 <div className="box">
                     <div className="tophalf">
