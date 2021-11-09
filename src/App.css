@@ -11,11 +11,12 @@ body {
     margin: 0 0;
     line-height: 1.4;
     font-family: Arial, 'sans-serif';
-    max-width: 600px;
 }
 
 .main {
-    margin: 85px 16px 16px;
+    padding: 45px 16px 16px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .headbar {
@@ -26,10 +27,6 @@ body {
     padding: 10px;
     padding-left: 20px;
     z-index: 1000;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
 }
 
 .headbar_img{
