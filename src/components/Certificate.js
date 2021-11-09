@@ -15,7 +15,9 @@ const Certificate = () => {
     const {certificateData, timer} = useCertificateData();
 
     const handleInstallClick = (e) => {
-        deferredPrompt.prompt();  // Show the install prompt
+        if (deferredPrompt) {
+            deferredPrompt.prompt();  // Show the install prompt
+        }
     };
 
     return (
