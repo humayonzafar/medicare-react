@@ -11,6 +11,7 @@ body {
     margin: 0 0;
     line-height: 1.4;
     font-family: Arial, 'sans-serif';
+    background-color: #008542;
 }
 
 .main {
@@ -246,14 +247,15 @@ button:hover{
     cursor: pointer;
 }
 
+#root,.main{
+    background-color: #ffffff !important;
+}
+
 @media only screen and (max-width: 600px) {
     .header-nav {
         max-width: 600px;
     }
     .headbar{
         padding: 10px 12px 10px 10px;
-    }
-    .statusbar-overlay {
-        background: #008542 !important;
     }
 }
