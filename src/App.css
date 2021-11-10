@@ -253,4 +253,7 @@ button:hover{
     .headbar{
         padding: 10px 12px 10px 10px;
     }
+    .statusbar-overlay {
+        background: #008542 !important;
+    }
 }
