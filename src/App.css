@@ -245,3 +245,12 @@ button.close-button {
 button:hover{
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+    .header-nav {
+        max-width: 600px;
+    }
+    .headbar{
+        padding: 10px 14px 10px 14px;
+    }
+}
