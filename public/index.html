@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="apple-mobile-web-app-title" content="Medicare" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#008542" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="msapplication-navbutton-color" content="#008542">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale = 1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#008542" />
@@ -63,18 +63,6 @@
     -->
   </body>
   <script type="application/javascript">
-    // function registerServiceWorker() {
-    //   if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker.register('./serviceWorker.js').then(function (reg) {
-    //       console.log("service worker registered")
-    //     }).catch(function (err) {
-    //       console.log(err)
-    //     });
-    //   } else {
-    //     console.log("Could not find serviceWorker in navigator")
-    //   }
-    // }
-
     function registerServiceWorker(){
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -141,5 +129,10 @@
       }
     }
     registerServiceWorker();
+  </script>
+  <script>
+    if (window.navigator.standalone) {
+      document.querySelector('#root').style.padding = '20px 0 0 0'
+    }
   </script>
 </html>
