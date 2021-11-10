@@ -63,15 +63,81 @@
     -->
   </body>
   <script type="application/javascript">
-    function registerServiceWorker() {
+    // function registerServiceWorker() {
+    //   if ('serviceWorker' in navigator) {
+    //     navigator.serviceWorker.register('./serviceWorker.js').then(function (reg) {
+    //       console.log("service worker registered")
+    //     }).catch(function (err) {
+    //       console.log(err)
+    //     });
+    //   } else {
+    //     console.log("Could not find serviceWorker in navigator")
+    //   }
+    // }
+
+    function registerServiceWorker(){
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./serviceWorker.js').then(function (reg) {
-          console.log("service worker registered")
-        }).catch(function (err) {
-          console.log(err)
-        });
+        window.addEventListener('load', () => {
+
+          let refreshing = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            console.log('New service worker in charge.');
+            if (refreshing) return;
+            refreshing = true;
+            window.location.reload();
+          });
+
+          navigator.serviceWorker.register('/serviceWorker.js').then(registration => {
+            console.log('Service worker registered.');
+
+            // No controller for this page, nothing to do for now.
+            if (!navigator.serviceWorker.controller) {
+              console.log('No service worker controlling this page.');
+            }
+
+            // A new service worker has been fetched, watch for state changes.
+            //
+            // This event is fired EVERY TIME a service worker is fetched and
+            // succesfully parsed and goes into 'installing' state. This
+            // happens, too, the very first time the page is visited, the very
+            // first time a service worker is fetched for this page, when the
+            // page doesn't have a controller, but in that case there's no new
+            // version available and the notification must not appear.
+            //
+            // So, if the page doesn't have a controller, no notification shown.
+            registration.addEventListener('updatefound', function () {
+              console.log('New service worker in installing state.');
+
+              registration.installing.onstatechange = function () {
+                console.log('Service worker state changed to', registration.state);
+                if (registration.state == 'installed') {
+                  if (!navigator.serviceWorker.controller) {
+                    console.log('First install for this service worker.');
+                  } else {
+                    console.log('New service worker is ready to install on refresh.');
+                  }
+                }
+              };
+            });
+
+            // If a service worker is in 'waiting' state, then maybe the user
+            // dismissed the notification when the service worker was in the
+            // 'installing' state or maybe the 'updatefound' event was fired
+            // before it could be listened, or something like that. Anyway, in
+            // that case the notification has to be shown again.
+            //
+            if (registration.waiting) {
+              console.log('Service working in skipwaiting state.');
+            }
+
+            // Well, really this should go into a setInterval() call, but I'm
+            // including it here to be exhaustive.
+            console.log('Updating service worker.');
+            registration.update();
+          }).catch(error => console.log('Service worker not registered (' + error +').'))
+        })
       } else {
-        console.log("Could not find serviceWorker in navigator")
+        console.log('Service workers not supported.');
       }
     }
     registerServiceWorker();
